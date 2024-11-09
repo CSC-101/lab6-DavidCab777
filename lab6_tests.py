@@ -64,15 +64,55 @@ class TestCases(unittest.TestCase):
 
 
     # Part 1
+    def test_selection_sort_books1(self):
+        new = [data.Book(["author 1", "author 2"],"Title 1"), data.Book(["author 4", "author 3"],"Title 2")]
+        result = lab6.selection_sort_books(new)
+        expected = ["new", "Title", "Title to", "Final Title"]
+        self.assertEqual(expected,result)
 
 
     # Part 2
+    def test_swap_case1(self):
+        words = 'The dog has Eaten A cat'
+        result = lab6.swap_case(words)
+        expected = 'tHE DOG HAS eATEN a CAT'
+        self.assertEqual(result,expected)
 
-
+    def test_swap_case2(self):
+        words = 'This WAS fun'
+        result = lab6.swap_case(words)
+        expected = 'tHIS was FUN'
+        self.assertEqual(result,expected)
     # Part 3
+    def test_str_translate1(self):
+        words = 'racecar'
+        old = 'a'
+        new = 'o'
+        result = lab6.str_translate(words, old, new)
+        expected = 'rocecor'
+        self.assertEqual(result,expected)
 
+    def test_str_translate2(self):
+        words = 'obispo'
+        old = 'o'
+        new = 'a'
+        result = lab6.str_translate(words, old, new)
+        expected = 'abispa'
+        self.assertEqual(result,expected)
 
     # Part 4
+    def test_histogram1(self):
+        words = 'hello hello is the hello hi'
+        result = lab6.histogram(words)
+        expected = {'hello': 3, 'hi':1, 'is': 1, 'the': 1}
+        self.assertEqual(result, expected)
+
+    def test_histogram2(self):
+        words = 'the new is the new'
+        result = lab6.histogram(words)
+        expected = {'is': 1,'new':2, 'the': 2}
+        self.assertEqual(result, expected)
+
 
 
 
